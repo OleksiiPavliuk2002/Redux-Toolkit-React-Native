@@ -79,5 +79,11 @@ const wordsLearningSlice = createSlice({
   },
 });
 
+export const selectWordsToLearn = createSelector(
+  (state) => state.wordsLearning.words,
+  (words) => words.filter((word) => word.status < 2)
+);
+
 export const wordsLearningActions = wordsLearningSlice.actions;
+
 export default wordsLearningSlice;
