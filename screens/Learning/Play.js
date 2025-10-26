@@ -1,12 +1,12 @@
 import { View, Text, StyleSheet, Image } from "react-native";
 import { useState } from "react";
-
+import { selectWordsToLearn } from "../../store/wordsLearningSlice";
 import WordCard from "../../components/WordCard";
 import { COLORS_DARK, COLORS_LIGHT } from "../../constants";
 import { useSelector } from "react-redux";
 
 export default function Play() {
-  const wordsToStudy = useSelector(state => state.wordsLearning.words || []);
+  const wordsToStudy = useSelector(selectWordsToLearn);
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
 
   const isDark = useSelector(state => state.theme.isDark);
@@ -56,4 +56,5 @@ const styles = StyleSheet.create({
     alignSelf: "center",
     resizeMode: "contain",
   },
+
 });
