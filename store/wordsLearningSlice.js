@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, createSelector } from "@reduxjs/toolkit";
 import { INITIAL_FORGETTING_SPAN } from "../constants";
 
 const initialState = {
@@ -87,3 +87,4 @@ export const selectWordsToLearn = createSelector(
 export const wordsLearningActions = wordsLearningSlice.actions;
 
 export default wordsLearningSlice;
+
